@@ -1,10 +1,8 @@
 
-# 🧪 Projeto de Testes Caixa Cinza – API de Autenticação Supabase
-
-**Disciplina:** Testes de Software  
-**Projeto:** Testes Caixa Cinza em API de Autenticação  
+#  Projeto de Teste Caixa Cinza 
+  
+**Projeto:** Teste Caixa Cinza  
 **Ferramentas:** Supabase, Postman Desktop e GitHub  
-**Repositório:** Teste-Caixa-Cinza
 
 ---
 
@@ -34,7 +32,7 @@ Durante o desenvolvimento foram realizadas as seguintes atividades:
 
 # 3. Configuração do Supabase
 
-## 3.1 Criação do projeto
+## 3 A) Criação do projeto
 
 Inicialmente, foi criada uma conta na plataforma Supabase e, em seguida, um novo projeto chamado **Testes Caixa Cinza**.
 
@@ -42,13 +40,13 @@ O projeto foi configurado para disponibilizar os recursos necessários à realiz
 
 O Supabase foi utilizado como backend responsável pelo gerenciamento dos usuários e pelo processamento das solicitações de login.
 
-## 3.2 Tipo de autenticação utilizada
+## 3 B) Tipo de autenticação utilizada
 
 Foi utilizada a autenticação por e-mail e senha, disponibilizada pelo Supabase Auth.
 
 Esse método permite que usuários realizem login informando suas credenciais cadastradas.
 
-## 3.3 Criação do usuário
+## 3 C) Criação do usuário
 
 Foi criado um usuário de teste por meio do painel de autenticação do Supabase.
 
@@ -56,11 +54,11 @@ Esse usuário foi utilizado para realizar o cenário de login válido no Postman
 
 Também foram utilizados dados inválidos e inexistentes para verificar o comportamento da API diante de diferentes situações.
 
-## 3.4 Objetivo da configuração
+## 3 D) Objetivo da configuração
 
 A configuração do Supabase teve como finalidade disponibilizar uma API funcional para receber requisições de autenticação e permitir a execução dos testes propostos na atividade.
 
-## 3.5 Evidências
+## 3 E) Evidências
 
 As evidências desta etapa estão organizadas na pasta `prints/`.
 
@@ -72,19 +70,19 @@ As evidências desta etapa estão organizadas na pasta `prints/`.
 
 # 4. Configuração do Postman
 
-## 4.1 Criação do Workspace
+## 4 A) Criação do Workspace
 
 Foi criado um Workspace no Postman Desktop com o nome **Testes Caixa Cinza**, destinado à organização das requisições e dos testes realizados durante a atividade.
 
 O Workspace permite centralizar as requisições utilizadas e facilitar a organização do processo de validação.
 
-## 4.2 Configuração do Environment
+## 4 B) Configuração do Environment
 
 Foi criado um Environment chamado **Supabase - Testes**.
 
 Nesse ambiente foram configuradas as variáveis necessárias para executar as requisições sem precisar informar manualmente os dados em cada teste.
 
-## 4.3 Variáveis configuradas
+## 4 C) Variáveis configuradas
 
 | Variável | Descrição |
 |---|---|
@@ -97,7 +95,7 @@ As variáveis permitem reutilizar informações nas requisições, facilitando a
 
 Por segurança, as credenciais reais não são disponibilizadas neste repositório.
 
-## 4.4 Utilização do Postman
+## 4 D) Utilização do Postman
 
 O Postman foi utilizado para enviar requisições HTTP ao endpoint de autenticação do Supabase.
 
@@ -113,19 +111,19 @@ Por meio da ferramenta foi possível:
 
 # 5. Configuração das Requisições
 
-## 5.1 Endpoint utilizado
+## 5 A) Endpoint utilizado
 
 Foi utilizada a seguinte rota de autenticação:
 
 `{{base_url}}/auth/v1/token?grant_type=password`
 
-## 5.2 Método HTTP
+## 5 B) Método HTTP
 
 **POST**
 
 O método POST foi utilizado para enviar as credenciais do usuário à API e solicitar a autenticação.
 
-## 5.3 Headers utilizados
+## 5 C) Headers utilizados
 
 | Header | Valor |
 |---|---|
@@ -139,7 +137,7 @@ O Content-Type informa que os dados enviados estão no formato JSON.
 
 O header Authorization foi configurado conforme a requisição utilizada no Postman. A chave utilizada deve ser a chave pública apropriada do projeto, nunca a chave secreta `service_role`.
 
-## 5.4 Body JSON
+## 5 D) Body JSON
 
 O corpo da requisição foi configurado no formato JSON, contendo os campos de e-mail e senha.
 
@@ -152,7 +150,7 @@ Exemplo:
 }
 ```
 
-## 5.5 Finalidade da requisição
+## 5 E) Finalidade da requisição
 
 A requisição tem como finalidade verificar se as credenciais informadas correspondem a um usuário cadastrado no Supabase.
 
@@ -160,7 +158,7 @@ Quando as informações estão corretas, a API retorna uma resposta de sucesso c
 
 Quando as informações são inválidas ou estão ausentes, a API retorna mensagens de erro correspondentes à situação identificada.
 
-## 5.6 Evidências
+## 5 F) Evidências
 
 - Endpoint configurado.
 - Método POST selecionado.
@@ -174,7 +172,7 @@ Foram executados cinco cenários de testes para verificar diferentes comportamen
 
 Os testes foram realizados diretamente no Postman Desktop, utilizando o endpoint de autenticação do Supabase.
 
-## 6.1 TC01 – Login válido
+## 6 A) TC01 – Login válido
 
 **Objetivo:** Verificar se a API permite a autenticação de um usuário cadastrado com credenciais corretas.
 
@@ -193,7 +191,7 @@ A API retornou o status HTTP 200 OK, disponibilizando um token de acesso e infor
 
 **Status:** APROVADO.
 
-## 6.2 TC02 – Senha incorreta
+## 6 B) TC02 – Senha incorreta
 
 **Objetivo:** Verificar se a API impede o acesso quando o usuário informa uma senha incorreta.
 
@@ -220,7 +218,7 @@ A API retornou:
 
 **Status:** APROVADO.
 
-## 6.3 TC03 – Usuário inexistente
+## 6 C) TC03 – Usuário inexistente
 
 **Objetivo:** Verificar o comportamento da API quando é informado um e-mail que não está cadastrado no sistema.
 
@@ -247,7 +245,7 @@ A API retornou:
 
 **Status:** APROVADO.
 
-## 6.4 TC04 – Campos vazios
+## 6 D) TC04 – Campos vazios
 
 **Objetivo:** Verificar se a API identifica a ausência de informações obrigatórias no processo de autenticação.
 
@@ -274,7 +272,7 @@ A API retornou:
 
 **Status:** APROVADO.
 
-## 6.5 TC05 – Credenciais inválidas
+## 6 E) TC05 – Credenciais inválidas
 
 **Objetivo:** Verificar se a API rejeita informações de autenticação em formato inválido.
 
@@ -307,7 +305,7 @@ Os testes realizados foram registrados por meio de uma planilha de controle, con
 
 O registro permite acompanhar as entradas utilizadas, os resultados esperados, os resultados obtidos e a situação de cada teste.
 
-## 7.1 Tabela de cenários
+## 7 A) Tabela de cenários
 
 | ID | Cenário | Entrada utilizada | Resultado esperado | Resultado obtido | Status |
 |---|---|---|---|---|---|
@@ -317,13 +315,13 @@ O registro permite acompanhar as entradas utilizadas, os resultados esperados, o
 | TC04 | Campos vazios | E-mail e senha vazios | Erro de validação | HTTP 400 - validation_failed | APROVADO |
 | TC05 | Credenciais inválidas | E-mail malformado e senha inválida | Mensagem de erro | HTTP 400 - invalid_credentials | APROVADO |
 
-## 7.2 Importância da documentação
+## 7 B) Importância da documentação
 
 A documentação dos testes é importante porque permite acompanhar os resultados, identificar falhas e comprovar o comportamento da aplicação diante de diferentes situações.
 
 Também facilita a reprodução dos testes e a identificação de possíveis problemas durante futuras manutenções.
 
-## 7.3 Falhas identificadas
+## 7 C) Falhas identificadas
 
 Durante os testes foram observados diferentes retornos de erro:
 
@@ -343,7 +341,7 @@ Após a execução dos cinco cenários, foram observados os seguintes resultados
 - Os campos vazios foram identificados pela validação da API.
 - As credenciais inválidas foram rejeitadas.
 
-## 8.1 Resumo dos resultados
+## 8 A) Resumo dos resultados
 
 | Indicador | Resultado |
 |---|---|
