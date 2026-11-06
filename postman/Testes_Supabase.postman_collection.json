@@ -1,8 +1,0 @@
-{
-  "info": {
-    "name": "Testes de Autenticação Supabase",
-    "description": "Coleção de testes caixa cinza da API de autenticação",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": []
-}
