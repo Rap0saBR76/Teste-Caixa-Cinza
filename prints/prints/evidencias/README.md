@@ -1,1 +1,0 @@
-Pasta para armazenar as evidências do projeto.
